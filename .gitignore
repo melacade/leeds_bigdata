@@ -1,4 +1,6 @@
 /venv/
-*.xml
-*.xml
-.idea/misc.xml
+/.idea/
+/views/__pycache__/
+__pycache__/
+views/__pycache__/page_view.cpython-37.pyc
+*.pyc
