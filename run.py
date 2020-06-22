@@ -6,4 +6,4 @@ app.register_blueprint(data, url_prefix="/data")
 app.register_blueprint(page, url_prefix="/")
 
 if __name__ == '__main__':
-    app.run(port=5001)
+    app.run(port=5001,debug=True)

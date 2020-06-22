@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block css %}
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link rel="stylesheet" href="/static/css/index.css">
+{% endblock %}
+{% block content %}
+    <div class="panel panel-default" style="width: 80%; margin-left: 10%">
+        <div class="panel-heading" >航空公司公司</div>
+        <table class="table" style="text-align: center">
+            <tr>
+                {% for company in companys %}
+                    {% set num = companys.index(company) + 1 %}
+                    <td>
+                        <a href="/modular3/detail?company_id={{ company.id }}">
+                            {{ company.name }}
+                        </a>
+                    </td>
+                    {% if num % 5 == 0 %}
+                        </tr>
+                        <tr>
+                    {% endif %}
+                {% endfor %}
+        </table>
+
+    </div>
+    <div id="chart_16" class="main_table t_btn8" style="width:80%; height: 500px; margin-left: 10%"></div>
+{% endblock %}
+{% block js %}
+    <script src="/static/js/jquery-2.2.1.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/common.js"></script>
+    <script src="/static/js/echarts.min.js"></script>
+    <script src="/static/js/dataTool.js"></script>
+    <script src="/static/js/china.js"></script>
+    <script src="/static/js/tagcanvas.min.js"></script>
+    <script src="/static/js/area.js"></script>
+    <script src="/static/js/main/modular3.js"></script>
+{% endblock %}
